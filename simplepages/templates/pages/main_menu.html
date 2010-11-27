@@ -1,0 +1,15 @@
+<ul>
+     {% for menu in main_menu %}
+        <li {% if menu.current %} class="current"{% endif %}><a href="{{ menu.url }}">{{ menu.name }}</a>
+            {% if menu.page_set.menu_items %}
+                <ul>
+                    {% for page in menu.page_set.menu_items %}
+                        <li>
+                            <a href="{{ page.url }}"{% ifequal page.url request.path %} class="current"{% endifequal %}>{{ page.nav_title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li> 
+    {% endfor %}
+</ul>

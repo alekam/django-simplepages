@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block html_title %}{% if page.html_title %}{{ page.html_title }}{% else %}{{ page.title }}{% endif %}{% endblock %}
+
+{% block meta_description %}{{ page.meta_description }}{% endblock %}
+
+{% block meta_keywords %}{{ page.meta_keywords }}{% endblock %}
+
+{% block site_section %}{{ page.site_section.url }}{% endblock %}

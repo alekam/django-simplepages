@@ -1,0 +1,17 @@
+{% extends 'pages/header_settings.html' %}
+
+{% load page_tags %}
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <div id="content-block">
+        {% if page.image %}
+            <img src="{{ page.get_image_url }}" />
+        {% endif %}
+        
+        {% if page.content %}
+            {{ page.content|autolinebreaks }}
+        {% else %}
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed vel tellus. Nulla faucibus, felis et dictum rutrum, tortor nunc convallis lorem, nec sodales justo urna sit amet velit. Nam posuere. Curabitur lorem lectus, pellentesque semper, sollicitudin sed, interdum in, sapien. Sed mollis purus id sapien. Maecenas nisl erat, venenatis quis, vulputate at, congue congue, nisl. Maecenas at est vitae nisl molestie dictum. Nullam a justo nec nisi adipiscing iaculis. Nullam egestas. Sed auctor, eros sit amet dignissim placerat, sem neque posuere ligula, id semper tortor metus et purus. Maecenas elementum adipiscing ipsum. Fusce orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eu pede. Sed ac est. Sed vulputate pellentesque lorem. Nulla velit velit, fermentum eget, aliquet vitae, laoreet a, urna. Proin congue velit eu velit. Praesent mollis erat vel nunc. Nulla eget lacus.</p>
+        {% endif %}
+    </div>
+{% endblock %}

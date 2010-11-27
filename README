@@ -1,0 +1,19 @@
+django-simplepages
+==================
+
+This project is forked from its original host in
+[googlecode](http://code.google.com/p/django-simplepages/). For the original
+documentation, please refer to its wiki page.
+
+Differences
+===========
+
+1. The SIMPLEPAGES_HTML_EDITOR settings configuration is removed, as well as
+   the embedding of YUI JS code in the admin interface to edit HTML pages.
+   A more pluggable and/or embeddable solution is desired.
+
+To Do
+=====
+
+1. Add support for pluggable markup engine to edit HTML pages.
+   Possibly with JS to preview as you go.

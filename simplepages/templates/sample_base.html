@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>{% block html_title %}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}" />
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
+    {% block extra-head %}{% endblock %}
+</head>
+<body class="{% block site_section %}{% endblock %}">
+<div id="container">
+    <div id="page"  class="clearfix">		
+        <div id="header">
+            <div id="menu">
+                {% load page_tags %}{% main_menu request %}
+		    </div>
+        </div>
+    
+		<div id="content">           	
+            {% autoescape off %}
+                {% block content %}{% endblock %}
+            {% endautoescape %}
+        </div><!-- end content -->
+    </div><!-- end page -->
+
+ 	<div id="footer">
+        <center>&copy;{% now "Y" %}</center>
+    </div>
+</div>
+
+{% if user.is_staff %}
+    {# Determining if we should load the javascript for displaying admin links #}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/admin/js/browse_edit.js"></script>
+{% endif %}
+</body>
+</html>
+
